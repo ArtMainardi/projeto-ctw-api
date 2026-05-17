@@ -27,7 +27,7 @@ public class TurmasService {
     public Turmas modificar(Turmas modifiedTurma, Long id){
         Turmas newTurma = buscar(id);
         newTurma.setNome_turma(modifiedTurma.getNome_turma());
-        newTurma.setId_periodo(modifiedTurma.getId_periodo());
+        newTurma.setPeriodo(modifiedTurma.getPeriodo());
         return repository.save(newTurma);
     }
 

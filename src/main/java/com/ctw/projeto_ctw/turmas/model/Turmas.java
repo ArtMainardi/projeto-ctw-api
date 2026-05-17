@@ -1,6 +1,7 @@
 package com.ctw.projeto_ctw.turmas.model;
 
 import com.ctw.projeto_ctw.alunos.model.Alunos;
+import com.ctw.projeto_ctw.periodos.model.Periodos;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,8 +23,8 @@ public class Turmas {
     // --
     @ManyToOne
     @JoinColumn(name = "periodos_id_periodo")
-    private Long id_periodo;
+    private Periodos periodo;
     // --
-    @OneToMany(mappedBy = "turmas")
+    @OneToMany(mappedBy = "turma")
     List<Alunos> alunos;
 }

@@ -21,6 +21,6 @@ public class Periodos {
     @Column(length = 20)
     private String periodo;
     // --
-    @OneToMany(mappedBy = "periodos")
+    @OneToMany(mappedBy = "periodo")
     List<Turmas> turmas;
 }

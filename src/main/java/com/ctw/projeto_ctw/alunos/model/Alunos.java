@@ -1,5 +1,6 @@
 package com.ctw.projeto_ctw.alunos.model;
 
+import com.ctw.projeto_ctw.turmas.model.Turmas;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,8 +30,8 @@ public class Alunos {
     private String cpf_aluno;
     // --
     @ManyToOne
-    @JoinColumn(name = "turma_id_turma")
-    private Long id_turma;
+    @JoinColumn(name = "turmas_id_turma")
+    private Turmas turma;
     // --
     @Column(columnDefinition = "BLOB")
     private byte[] foto_perfil_aluno;

@@ -31,7 +31,7 @@ public class AlunosService {
         newAluno.setMatricula_aluno(modifiedAluno.getMatricula_aluno());
         newAluno.setData_nascimento_aluno(modifiedAluno.getData_nascimento_aluno());
         newAluno.setCpf_aluno(modifiedAluno.getCpf_aluno());
-        newAluno.setId_turma(modifiedAluno.getId_turma());
+        newAluno.setTurma(modifiedAluno.getTurma());
         newAluno.setFoto_perfil_aluno(modifiedAluno.getFoto_perfil_aluno());
         newAluno.setEmail_aluno(modifiedAluno.getEmail_aluno());
         newAluno.setSenha_aluno(modifiedAluno.getSenha_aluno());
