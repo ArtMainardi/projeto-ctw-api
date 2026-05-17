@@ -1,6 +1,6 @@
 package com.ctw.projeto_ctw.turmas.service;
 
-import com.ctw.projeto_ctw.turmas.model.TurmasModel;
+import com.ctw.projeto_ctw.turmas.model.Turmas;
 import com.ctw.projeto_ctw.turmas.repository.TurmasRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,19 +13,19 @@ public class TurmasService {
     private final TurmasRepository repository;
 
     // Listar todos os dados:
-    public List<TurmasModel> listar(){ return repository.findAll(); }
+    public List<Turmas> listar(){ return repository.findAll(); }
 
     // Buscar pelo ID:
-    public TurmasModel buscar(Long id){
+    public Turmas buscar(Long id){
         return repository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado!"));
     }
 
     // Salvar um dado:
-    public TurmasModel salvar(TurmasModel turma) { return repository.save(turma); }
+    public Turmas salvar(Turmas turma) { return repository.save(turma); }
 
     // Modificar um dado:
-    public TurmasModel modificar(TurmasModel modifiedTurma, Long id){
-        TurmasModel newTurma = buscar(id);
+    public Turmas modificar(Turmas modifiedTurma, Long id){
+        Turmas newTurma = buscar(id);
         newTurma.setNome_turma(modifiedTurma.getNome_turma());
         newTurma.setPeriodo_turma(modifiedTurma.getPeriodo_turma());
         return repository.save(newTurma);

@@ -3,7 +3,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GeneratorType;
 
 @Entity
 @Table(name = "turmas")
@@ -11,7 +10,7 @@ import org.hibernate.annotations.GeneratorType;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class TurmasModel {
+public class Turmas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_turma;

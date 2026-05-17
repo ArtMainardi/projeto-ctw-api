@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class AlunosModel {
+public class Alunos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_aluno;
