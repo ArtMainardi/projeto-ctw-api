@@ -16,7 +16,7 @@ public class TurmasService {
     public List<TurmasModel> listar(){ return repository.findAll(); }
 
     // Buscar pelo ID:
-    public TurmasModel buscar(long id){
+    public TurmasModel buscar(Long id){
         return repository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado!"));
     }
 
@@ -24,7 +24,7 @@ public class TurmasService {
     public TurmasModel salvar(TurmasModel turma) { return repository.save(turma); }
 
     // Modificar um dado:
-    public TurmasModel modificar(TurmasModel modifiedTurma, long id){
+    public TurmasModel modificar(TurmasModel modifiedTurma, Long id){
         TurmasModel newTurma = buscar(id);
         newTurma.setNome_turma(modifiedTurma.getNome_turma());
         newTurma.setPeriodo_turma(modifiedTurma.getPeriodo_turma());
@@ -32,5 +32,5 @@ public class TurmasService {
     }
 
     // Deletar um dado:
-    public void deletar(long id){ repository.deleteById(id); }
+    public void deletar(Long id){ repository.deleteById(id); }
 }
