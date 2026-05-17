@@ -1,9 +1,11 @@
 package com.ctw.projeto_ctw.periodos.model;
 
+import com.ctw.projeto_ctw.turmas.model.Turmas;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Entity
 @Table(name = "periodos")
@@ -18,4 +20,7 @@ public class Periodos {
     // --
     @Column(length = 20)
     private String periodo;
+    // --
+    @OneToMany(mappedBy = "periodos")
+    List<Turmas> turmas;
 }

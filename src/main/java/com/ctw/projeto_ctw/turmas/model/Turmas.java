@@ -14,7 +14,10 @@ public class Turmas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_turma;
-
+    // --
     private String nome_turma;
-    private String periodo_turma;
+    // --
+    @ManyToOne
+    @JoinColumn(name = "periodos_id_periodo")
+    private Long id_periodo;
 }
