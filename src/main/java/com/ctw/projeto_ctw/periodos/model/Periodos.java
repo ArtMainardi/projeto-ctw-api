@@ -1,6 +1,7 @@
 package com.ctw.projeto_ctw.periodos.model;
 
 import com.ctw.projeto_ctw.turmas.model.Turmas;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,6 @@ public class Periodos {
     private String periodo;
     // --
     @OneToMany(mappedBy = "periodo")
+    @JsonIgnoreProperties("periodo")
     List<Turmas> turmas;
 }

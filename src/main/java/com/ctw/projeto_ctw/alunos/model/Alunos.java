@@ -1,6 +1,7 @@
 package com.ctw.projeto_ctw.alunos.model;
 
 import com.ctw.projeto_ctw.turmas.model.Turmas;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,6 +32,7 @@ public class Alunos {
     // --
     @ManyToOne
     @JoinColumn(name = "turmas_id_turma")
+    @JsonIgnoreProperties("alunos")
     private Turmas turma;
     // --
     @Column(columnDefinition = "BLOB")
