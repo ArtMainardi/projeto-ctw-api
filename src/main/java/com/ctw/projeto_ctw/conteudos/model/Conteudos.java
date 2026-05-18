@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class Conteudos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_conteudo;
+    private Long id_conteudo;
     // --
     @Column(length = 40)
     private String titulo_conteudo;
