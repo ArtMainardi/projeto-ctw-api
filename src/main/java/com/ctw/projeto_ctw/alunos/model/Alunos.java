@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "alunos")
@@ -27,7 +29,7 @@ public class Alunos {
     // --
     private LocalDate data_nascimento_aluno;
     // --
-    @Column(columnDefinition = "CHAR(10)")
+    @Column(columnDefinition = "CHAR(11)")
     private String cpf_aluno;
     // --
     @ManyToOne
@@ -38,11 +40,12 @@ public class Alunos {
     @Column(columnDefinition = "BLOB")
     private byte[] foto_perfil_aluno;
     // --
-    @Column(length = 40)
+    @Column(length = 250)
     private String email_aluno;
     // --
     @Column(length = 200)
     private String senha_aluno;
     // --
-    private LocalDate data_criacao_aluno;
+    @CreationTimestamp
+    private LocalDateTime data_criacao_aluno;
 }
