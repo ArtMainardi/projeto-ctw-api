@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,9 +15,10 @@ import java.util.List;
 public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id_materia;
-    String nome_materia;
+    private Long id_materia;
+    private String nome_materia;
 
     @OneToMany(mappedBy = "materia")
-    List<Professor> professores;
+    @JsonIgnoreProperties("materia")
+    private List<Professor> professores;
 }

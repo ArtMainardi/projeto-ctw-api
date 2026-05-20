@@ -13,22 +13,22 @@ import java.time.LocalDate;
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id_professor;
+    private Long id_professor;
     @Column(length = 11)
-    String cpf_professor;
+    private String cpf_professor;
     @Column(length = 10)
-    String cadastro_professor;
+    private String cadastro_professor;
     @Column(length = 40)
-    String especialidade_professor;
-    LocalDate data_criacao_professor;
+    private String especialidade_professor;
+    private LocalDate data_criacao_professor;
     @Lob
     @Column(columnDefinition = "BLOB")
-    byte[] foto_perfil_professor;
-    String senha_professor;
+    private byte[] foto_perfil_professor;
+    private String senha_professor;
     @Column(length = 40)
-    String email_professor;
-    LocalDate data_nascimento_professor;
+    private String email_professor;
+    private LocalDate data_nascimento_professor;
     @ManyToOne
-    @JoinColumn(name="materia_id_materia")
-    Long id_materia;
+    @JoinColumn(name="materia_id_materia", nullable = false)
+    private Materia materia;
 }

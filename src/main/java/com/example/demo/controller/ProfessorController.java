@@ -36,7 +36,7 @@ public class ProfessorController {
         return ResponseEntity.ok(service.atualizar(id, prof));
     }
 
-    @DeleteMapping("/{id^}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id){
         service.excluir(id);
         return ResponseEntity.noContent().build();
