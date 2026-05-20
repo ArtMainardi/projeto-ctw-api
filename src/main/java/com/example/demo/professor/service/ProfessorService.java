@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.example.demo.professor.service;
 
-import com.example.demo.model.Professor;
-import com.example.demo.repository.ProfessorRepository;
+import com.example.demo.professor.model.Professor;
+import com.example.demo.professor.repository.ProfessorRepository;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 

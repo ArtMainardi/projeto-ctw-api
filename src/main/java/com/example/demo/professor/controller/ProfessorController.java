@@ -1,9 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.professor.controller;
 
-import com.example.demo.model.Materia;
-import com.example.demo.model.Professor;
-import com.example.demo.service.MateriaService;
-import com.example.demo.service.ProfessorService;
+import com.example.demo.professor.model.Professor;
+import com.example.demo.professor.service.ProfessorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

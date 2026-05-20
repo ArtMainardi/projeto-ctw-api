@@ -1,9 +1,7 @@
-package com.example.demo.service;
+package com.example.demo.materia.service;
 
-import com.example.demo.model.Materia;
-import com.example.demo.repository.MateriaRepository;
-import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
