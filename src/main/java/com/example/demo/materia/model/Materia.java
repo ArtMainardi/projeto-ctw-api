@@ -1,5 +1,7 @@
 package com.example.demo.materia.model;
 
+import com.example.demo.professor.model.Professor;
+import com.example.demo.professor_materia.model.ProfessorMateria;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,5 +22,5 @@ public class Materia {
 
     @OneToMany(mappedBy = "materia")
     @JsonIgnoreProperties("materia")
-    private List<Professor> professores;
+    private List<ProfessorMateria> pm;
 }

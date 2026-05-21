@@ -1,5 +1,7 @@
 package com.example.demo.materia.controller;
 
+import com.example.demo.materia.model.Materia;
+import com.example.demo.materia.service.MateriaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
