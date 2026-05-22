@@ -23,6 +23,7 @@ public class ProfessorService {
     }
     public Professor atualizar(Long id, Professor prof){
         Professor mod = buscarPorId(id);
+        mod.setNome_professor(prof.getNome_professor());
         mod.setCadastro_professor(prof.getCadastro_professor());
         mod.setCpf_professor(prof.getCpf_professor());
         mod.setEmail_professor(prof.getEmail_professor());
@@ -31,7 +32,6 @@ public class ProfessorService {
         mod.setData_criacao_professor(prof.getData_criacao_professor());
         mod.setData_nascimento_professor(prof.getData_nascimento_professor());
         mod.setFoto_perfil_professor(prof.getFoto_perfil_professor());
-        mod.setMateria(prof.getMateria());
         return repository.save(mod);
     }
     public void excluir(Long id){

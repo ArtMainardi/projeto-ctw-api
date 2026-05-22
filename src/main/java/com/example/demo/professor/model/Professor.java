@@ -1,7 +1,7 @@
 package com.example.demo.professor.model;
 
 import com.example.demo.materia.model.Materia;
-import com.example.demo.professor_materia.model.ProfessorMateria;
+import com.example.demo.professorMateria.model.ProfessorMateria;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,6 +21,9 @@ public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_professor;
+
+    @Column(length = 150, nullable = false)
+    private String nome_professor;
 
     @Column(length = 11, nullable = false)
     private String cpf_professor;
@@ -49,6 +52,6 @@ public class Professor {
     private LocalDate data_nascimento_professor;
 
     @OneToMany(mappedBy = "professor")
-    @JsonIgnoreProperties("professor")
-    private List<ProfessorMateria> pm;
+    @JsonIgnoreProperties(value = {"professor", "materia"})
+    private List<ProfessorMateria> profMat;
 }
