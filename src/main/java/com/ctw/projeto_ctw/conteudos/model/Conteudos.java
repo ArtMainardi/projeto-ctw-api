@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
+import org.hibernate.annotations.CreationTimestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "conteudos")
@@ -24,7 +24,9 @@ public class Conteudos {
     @Column(columnDefinition = "TEXT")
     private String descricao_conteudo;
     // --
-    private LocalDate data_publicacao;
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime data_publicacao;
     //--
     // --> Futura relação com MATERIAS
 }

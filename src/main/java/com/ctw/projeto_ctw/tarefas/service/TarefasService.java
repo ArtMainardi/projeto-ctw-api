@@ -28,7 +28,6 @@ public class TarefasService {
         Tarefas newTarefa = buscar(id);
         newTarefa.setTitulo_tarefa(modifiedTarefa.getTitulo_tarefa());
         newTarefa.setTexto_tarefa(modifiedTarefa.getTexto_tarefa());
-        newTarefa.setData_publicacao_tarefa(modifiedTarefa.getData_publicacao_tarefa());
         newTarefa.setData_entrega_tarefa(modifiedTarefa.getData_entrega_tarefa());
         return repository.save(newTarefa);
     }

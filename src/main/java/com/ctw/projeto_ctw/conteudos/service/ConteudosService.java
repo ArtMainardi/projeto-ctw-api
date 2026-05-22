@@ -28,7 +28,6 @@ public class ConteudosService {
         Conteudos newConteudo = buscar(id);
         newConteudo.setTitulo_conteudo(modifiedConteudo.getTitulo_conteudo());
         newConteudo.setDescricao_conteudo(modifiedConteudo.getDescricao_conteudo());
-        newConteudo.setData_publicacao(modifiedConteudo.getData_publicacao());
         return repository.save(newConteudo);
     }
 

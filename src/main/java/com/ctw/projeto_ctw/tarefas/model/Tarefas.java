@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDate;
+import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
@@ -23,7 +23,9 @@ public class Tarefas {
     // --
     private String texto_tarefa;
     // --
-    private LocalDate data_publicacao_tarefa;
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime data_publicacao_tarefa;
     // --
     private LocalDateTime data_entrega_tarefa;
     // --
