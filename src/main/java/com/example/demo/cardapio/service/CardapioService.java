@@ -28,7 +28,6 @@ public class CardapioService {
 
     public Cardapio atualizar(Cardapio dados, Long id){
         Cardapio mod = buscarPorId(id);
-        mod.setId_cardapio(dados.getId_cardapio());
         mod.setData_refeicao(dados.getData_refeicao());
         mod.setDescricao_refeicao(dados.getDescricao_refeicao());
         mod.setTipo_refeicao(dados.getTipo_refeicao());

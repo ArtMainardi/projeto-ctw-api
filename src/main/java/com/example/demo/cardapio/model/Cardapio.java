@@ -15,9 +15,12 @@ public class Cardapio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_cardapio;
+    @Column(nullable = false)
     private LocalDate data_refeicao;
     @Lob
+    @Column(nullable = false)
     private String descricao_refeicao;
+    @Column(nullable = false)
     private tipoRefeicao tipo_refeicao;
 }
 

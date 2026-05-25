@@ -14,6 +14,7 @@ import java.util.List;
 public class CardapioController {
     private final CardapioService service;
 
+    @GetMapping
     public List<Cardapio> listar(){
         return service.listar();
     }
@@ -23,7 +24,7 @@ public class CardapioController {
         return ResponseEntity.ok(service.buscarPorId(id));
     }
 
-    @PostMapping("/{id}")
+    @PostMapping
     public ResponseEntity<Cardapio> salver(@RequestBody Cardapio card){
         return ResponseEntity.ok(service.salvar(card));
     }

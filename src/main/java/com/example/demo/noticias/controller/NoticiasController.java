@@ -15,6 +15,7 @@ import java.util.List;
 public class NoticiasController {
     private final NoticiasService service;
 
+    @GetMapping
     public List<Noticias> listar(){
         return service.listar();
     }
@@ -24,7 +25,7 @@ public class NoticiasController {
         return ResponseEntity.ok(service.buscarPorId(id));
     }
 
-    @PostMapping("/{id}")
+    @PostMapping
     public ResponseEntity<Noticias> salver(@RequestBody Noticias not){
         return ResponseEntity.ok(service.salvar(not));
     }

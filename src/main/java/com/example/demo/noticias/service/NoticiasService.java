@@ -27,7 +27,6 @@ public class NoticiasService {
 
     public Noticias atualizar(Noticias dados, Long id){
         Noticias mod = buscarPorId(id);
-        mod.setId_noticias(dados.getId_noticias());
         mod.setImagem_noticia(dados.getImagem_noticia());
         mod.setTexto_noticia(dados.getTexto_noticia());
         mod.setTitulo_noticia(dados.getTitulo_noticia());
