@@ -43,7 +43,6 @@ public class ProfessorMateriaService {
         mat.setProfMat(relMat);
         matService.atualizar(id_materia, mat);
         profMat.setMateria(mat);
-        System.out.println(profMat);
         return repository.save(profMat);
     }
 

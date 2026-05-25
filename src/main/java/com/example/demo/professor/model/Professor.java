@@ -2,7 +2,10 @@ package com.example.demo.professor.model;
 
 import com.example.demo.materia.model.Materia;
 import com.example.demo.professorMateria.model.ProfessorMateria;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -52,6 +55,7 @@ public class Professor {
     private LocalDate data_nascimento_professor;
 
     @OneToMany(mappedBy = "professor")
-    @JsonIgnoreProperties(value = {"professor", "materia"})
+    @JsonBackReference
+    @JsonIgnore
     private List<ProfessorMateria> profMat;
 }
