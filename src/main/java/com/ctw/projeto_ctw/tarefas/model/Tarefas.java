@@ -1,11 +1,14 @@
 package com.ctw.projeto_ctw.tarefas.model;
 
+import com.ctw.projeto_ctw.alunos_tarefas.model.AlunosTarefas;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "tarefas")
@@ -30,4 +33,8 @@ public class Tarefas {
     private LocalDateTime data_entrega_tarefa;
     // --
     // Futuramente implementar FK com a tabela MATERIAS
+    // --
+    @OneToMany(mappedBy = "tarefa")
+    @JsonIgnoreProperties("tarefa")
+    List<AlunosTarefas> tarefas;
 }

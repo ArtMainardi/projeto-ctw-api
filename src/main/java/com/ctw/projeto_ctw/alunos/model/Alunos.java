@@ -1,5 +1,6 @@
 package com.ctw.projeto_ctw.alunos.model;
 
+import com.ctw.projeto_ctw.alunos_tarefas.model.AlunosTarefas;
 import com.ctw.projeto_ctw.turmas.model.Turmas;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "alunos")
@@ -48,4 +50,8 @@ public class Alunos {
     // --
     @CreationTimestamp
     private LocalDateTime data_criacao_aluno;
+    // --
+    @OneToMany(mappedBy = "aluno")
+    @JsonIgnoreProperties("aluno")
+    List<AlunosTarefas> tarefas;
 }
