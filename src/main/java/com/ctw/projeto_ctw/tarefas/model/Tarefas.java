@@ -1,6 +1,6 @@
 package com.ctw.projeto_ctw.tarefas.model;
 
-import com.ctw.projeto_ctw.alunos_tarefas.model.AlunosTarefas;
+import com.ctw.projeto_ctw.alunosTarefas.model.AlunosTarefas;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
