@@ -1,5 +1,6 @@
 package com.ctw.projeto_ctw.materias.model;
 
+import com.ctw.projeto_ctw.alunosMaterias.model.AlunosMaterias;
 import com.ctw.projeto_ctw.professoresMaterias.model.ProfessoresMaterias;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -25,4 +26,9 @@ public class Materias {
     @JsonBackReference
     @JsonIgnore
     private List<ProfessoresMaterias> profMat;
+
+    @OneToMany(mappedBy = "materia")
+    @JsonBackReference
+    @JsonIgnore
+    private List<AlunosMaterias> alnMat;
 }

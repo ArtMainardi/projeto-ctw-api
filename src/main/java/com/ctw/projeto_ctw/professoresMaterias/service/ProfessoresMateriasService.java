@@ -27,20 +27,7 @@ public class ProfessoresMateriasService {
     }
 
     public ProfessoresMaterias salvar(Long id_professor, Long id_materia){
-        ProfessoresMaterias profMat = new ProfessoresMaterias(null, profService.buscarPorId(id_professor), matService.buscarPorId(id_materia));
-        Professores prof = profService.buscarPorId(id_professor);
-        List<ProfessoresMaterias> relProf = prof.getProfMat();
-        relProf.add(profMat);
-        prof.setProfMat(relProf);
-        profService.atualizar(id_professor, prof);
-        profMat.setProfessor(prof);
-        Materias mat = matService.buscarPorId(id_materia);
-        List<ProfessoresMaterias> relMat = mat.getProfMat();
-        relMat.add(profMat);
-        mat.setProfMat(relMat);
-        matService.atualizar(id_materia, mat);
-        profMat.setMateria(mat);
-        return repository.save(profMat);
+        return repository.save(new ProfessoresMaterias(null, profService.buscarPorId(id_professor), matService.buscarPorId(id_materia)));
     }
 
     public ProfessoresMaterias atualizar(ProfessoresMaterias profMat, Long id){

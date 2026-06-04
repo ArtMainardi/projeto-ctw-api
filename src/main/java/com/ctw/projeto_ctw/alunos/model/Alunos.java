@@ -1,7 +1,10 @@
 package com.ctw.projeto_ctw.alunos.model;
 
+import com.ctw.projeto_ctw.alunosMaterias.model.AlunosMaterias;
 import com.ctw.projeto_ctw.alunosTarefas.model.AlunosTarefas;
 import com.ctw.projeto_ctw.turmas.model.Turmas;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -54,4 +57,10 @@ public class Alunos {
     @OneToMany(mappedBy = "aluno")
     @JsonIgnoreProperties("aluno")
     List<AlunosTarefas> tarefas;
+
+    @OneToMany(mappedBy = "aluno")
+    @JsonBackReference
+    @JsonIgnore
+    private List<AlunosMaterias> alnMat;
+
 }
