@@ -27,11 +27,12 @@ public class ProfessoresService {
         mod.setCadastro_professor(prof.getCadastro_professor());
         mod.setCpf_professor(prof.getCpf_professor());
         mod.setEmail_professor(prof.getEmail_professor());
-        mod.setEspecialidade_professor(mod.getEspecialidade_professor());
+        mod.setEspecialidade_professor(prof.getEspecialidade_professor());
         mod.setSenha_professor(prof.getSenha_professor());
         mod.setData_criacao_professor(prof.getData_criacao_professor());
         mod.setData_nascimento_professor(prof.getData_nascimento_professor());
         mod.setFoto_perfil_professor(prof.getFoto_perfil_professor());
+        mod.setAdm(prof.isAdm());
         return repository.save(mod);
     }
     public void excluir(Long id){

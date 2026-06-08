@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -51,6 +51,10 @@ public class Professores {
 
     @Column(nullable = false)
     private LocalDate data_nascimento_professor;
+
+    @Column(nullable = false)
+    @ColumnDefault("false")
+    private boolean adm;
 
     @OneToMany(mappedBy = "professor")
     @JsonBackReference
