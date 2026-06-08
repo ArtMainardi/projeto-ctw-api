@@ -1,9 +1,9 @@
 package com.ctw.projeto_ctw;
 
-import com.ctw.projeto_ctw.mrsc.alunos.model.Alunos;
-import com.ctw.projeto_ctw.mrsc.alunos.service.AlunosService;
-import com.ctw.projeto_ctw.mrsc.professores.model.Professores;
-import com.ctw.projeto_ctw.mrsc.professores.service.ProfessoresService;
+import com.ctw.projeto_ctw.mrsc.model.Alunos;
+import com.ctw.projeto_ctw.mrsc.service.AlunosService;
+import com.ctw.projeto_ctw.mrsc.model.Professores;
+import com.ctw.projeto_ctw.mrsc.service.ProfessoresService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
