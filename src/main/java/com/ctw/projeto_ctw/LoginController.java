@@ -40,7 +40,7 @@ public class LoginController {
                 if(alunos.get((int)cont).getEmail_aluno().equals(data.getEmail())){
                     emailVerify = true;
                     tipoUsuario = "aluno";
-                    usuarioId = cont+1;
+                    usuarioId = alunos.get((int)cont).getId_aluno();
                 }
             }
             if(!emailVerify){
@@ -48,7 +48,7 @@ public class LoginController {
                     if(professores.get((int)cont).getEmail_professor().equals(data.getEmail())){
                         emailVerify = true;
                         tipoUsuario = "professor";
-                        usuarioId = cont+1;
+                        usuarioId = professores.get((int)cont).getId_professor();
                     }
                 }
                 if(!emailVerify){
