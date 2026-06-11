@@ -33,4 +33,8 @@ public class TurmasService {
 
     // Deletar um dado:
     public void deletar(Long id){ repository.deleteById(id); }
+
+    public List<Turmas> rank(){
+        return repository.ordenarPorNotas().subList(0, 3);
+    }
 }

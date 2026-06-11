@@ -19,6 +19,11 @@ public class TurmasController {
     @GetMapping
     public List<Turmas> listar(){ return service.listar(); }
 
+    @GetMapping("/rank")
+    public List<Turmas> ranqueamento(){
+        return service.rank();
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Turmas> buscar(@PathVariable Long id){
         return ResponseEntity.ok(service.buscar(id));
