@@ -25,10 +25,10 @@ public class Professores {
     @Column(length = 150, nullable = false)
     private String nome_professor;
 
-    @Column(length = 11, nullable = false)
+    @Column(length = 11, nullable = false, unique = true)
     private String cpf_professor;
 
-    @Column(length = 10, nullable = false)
+    @Column(length = 10, nullable = false, unique = true)
     private String cadastro_professor;
 
     @Column(length = 40)
@@ -45,7 +45,7 @@ public class Professores {
     @Column(nullable = false)
     private String senha_professor;
 
-    @Column(length = 40, nullable = false)
+    @Column(length = 40, nullable = false, unique = true)
     private String email_professor;
 
     @Column(nullable = false)

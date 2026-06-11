@@ -23,15 +23,15 @@ public class Alunos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_aluno;
     // --
-    @Column(length = 40)
+    @Column(length = 40, nullable = false)
     private String nome_aluno;
     // --
-    @Column(length = 10)
+    @Column(length = 10, unique = true, nullable = false)
     private String matricula_aluno;
     // --
     private LocalDate data_nascimento_aluno;
     // --
-    @Column(columnDefinition = "CHAR(11)")
+    @Column(columnDefinition = "CHAR(11)", unique = true, nullable = false)
     private String cpf_aluno;
     // --
     @ManyToOne
@@ -42,13 +42,14 @@ public class Alunos {
     @Column(columnDefinition = "BLOB")
     private byte[] foto_perfil_aluno;
     // --
-    @Column(length = 250)
+    @Column(length = 250, unique = true, nullable = false)
     private String email_aluno;
     // --
-    @Column(length = 200)
+    @Column(length = 200, nullable = false)
     private String senha_aluno;
     // --
     @CreationTimestamp
+    @Column(updatable = false, nullable = false)
     private LocalDateTime data_criacao_aluno;
     // --
     @OneToMany(mappedBy = "aluno")
