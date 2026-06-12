@@ -25,7 +25,7 @@ public class AlunosMateriasController {
         return ResponseEntity.ok(service.buscarPorId(id));
     }
 
-    @PostMapping("/aluno/{id_aluno}/materia/{id_materia}")
+    @PostMapping("/aluno={id_aluno}/materia={id_materia}")
     public ResponseEntity<AlunosMaterias> salvar(@PathVariable Long id_aluno, @PathVariable Long id_materia){
         return ResponseEntity.ok(service.salvar(id_aluno, id_materia));
     }

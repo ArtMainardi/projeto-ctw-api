@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/alunosTarefas")
+@RequestMapping("/alunos-tarefas")
 @RequiredArgsConstructor
 @CrossOrigin("*")
 
@@ -27,14 +27,14 @@ public class AlunosTarefasController {
         return ResponseEntity.ok(service.buscar(id));
     }
 
-    @PostMapping("/{id_aluno}-{id_tarefa}")
+    @PostMapping("/aluno={id_aluno}/tarefa={id_tarefa}")
     public ResponseEntity<AlunosTarefas> salvar(@RequestBody AlunosTarefas newAlunoTarefa, @PathVariable Long id_aluno, @PathVariable Long id_tarefa){
         newAlunoTarefa.setAluno(alunosService.buscar(id_aluno));
         newAlunoTarefa.setTarefa(tarefasService.buscar(id_tarefa));
         return ResponseEntity.ok(service.salvar(newAlunoTarefa));
     }
 
-    @PutMapping("/{id}/{id_aluno}-{id_tarefa}")
+    @PutMapping("/{id}/aluno={id_aluno}/tarefa={id_tarefa}")
     public ResponseEntity<AlunosTarefas> modificar(@RequestBody AlunosTarefas modifiedAlunoTarefa, @PathVariable Long id,
             @PathVariable Long id_aluno, @PathVariable Long id_tarefa){
         modifiedAlunoTarefa.setAluno(alunosService.buscar(id_aluno));

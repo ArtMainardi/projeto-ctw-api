@@ -1,7 +1,6 @@
 package com.ctw.projeto_ctw.mrsc.model;
 
-import com.ctw.projeto_ctw.mrsc.model.AlunosTarefas;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,6 +34,6 @@ public class Tarefas {
     // Futuramente implementar FK com a tabela MATERIAS
     // --
     @OneToMany(mappedBy = "tarefa")
-    @JsonIgnoreProperties("tarefa")
-    List<AlunosTarefas> tarefas;
+    @JsonIgnore
+    List<AlunosTarefas> alunosTarefas;
 }

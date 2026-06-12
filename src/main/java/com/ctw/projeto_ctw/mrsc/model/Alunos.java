@@ -53,8 +53,8 @@ public class Alunos {
     private LocalDateTime data_criacao_aluno;
     // --
     @OneToMany(mappedBy = "aluno")
-    @JsonIgnoreProperties("aluno")
-    List<AlunosTarefas> tarefas;
+    @JsonIgnore
+    List<AlunosTarefas> alunosTarefas;
 
     @OneToMany(mappedBy = "aluno")
     @JsonBackReference
