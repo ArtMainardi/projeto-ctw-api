@@ -20,11 +20,13 @@ public class Turmas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_turma;
     // --
+    @Column(nullable = false)
     private String nome_turma;
     // --
     @ManyToOne
     @JoinColumn(name = "periodos_id_periodo")
     @JsonIgnoreProperties("turmas")
+    @Column(nullable = false)
     private Periodos periodo;
     // --
     @OneToMany(mappedBy = "turma")

@@ -18,10 +18,11 @@ public class Periodos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_periodo;
     // --
-    @Column(length = 20)
+    @Column(length = 20, nullable = false)
     private String periodo;
     // --
     @OneToMany(mappedBy = "periodo")
     @JsonIgnoreProperties("periodo")
+    @Column(nullable = false)
     List<Turmas> turmas;
 }

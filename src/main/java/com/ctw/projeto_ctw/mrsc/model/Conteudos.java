@@ -18,14 +18,14 @@ public class Conteudos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_conteudo;
     // --
-    @Column(length = 40)
+    @Column(length = 40, nullable = false)
     private String titulo_conteudo;
     // --
     @Column(columnDefinition = "TEXT")
     private String descricao_conteudo;
     // --
     @CreationTimestamp
-    @Column(updatable = false)
+    @Column(updatable = false, nullable = false)
     private LocalDateTime data_publicacao;
     //--
     // --> Futura relação com MATERIAS

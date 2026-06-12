@@ -35,7 +35,6 @@ public class AlunosService {
         newAluno.setFoto_perfil_aluno(modifiedAluno.getFoto_perfil_aluno());
         newAluno.setEmail_aluno(modifiedAluno.getEmail_aluno());
         newAluno.setSenha_aluno(modifiedAluno.getSenha_aluno());
-        newAluno.setData_criacao_aluno(modifiedAluno.getData_criacao_aluno());
         return repository.save(newAluno);
     }
 

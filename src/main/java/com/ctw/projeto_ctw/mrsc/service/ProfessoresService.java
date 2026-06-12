@@ -29,7 +29,6 @@ public class ProfessoresService {
         mod.setEmail_professor(prof.getEmail_professor());
         mod.setEspecialidade_professor(prof.getEspecialidade_professor());
         mod.setSenha_professor(prof.getSenha_professor());
-        mod.setData_criacao_professor(prof.getData_criacao_professor());
         mod.setData_nascimento_professor(prof.getData_nascimento_professor());
         mod.setFoto_perfil_professor(prof.getFoto_perfil_professor());
         mod.setAdm(prof.isAdm());

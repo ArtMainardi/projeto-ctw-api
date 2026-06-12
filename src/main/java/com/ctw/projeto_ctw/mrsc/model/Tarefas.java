@@ -20,7 +20,7 @@ public class Tarefas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_tarefa;
     // --
-    @Column(length = 40)
+    @Column(length = 40, nullable = false)
     private String titulo_tarefa;
     // --
     private String texto_tarefa;

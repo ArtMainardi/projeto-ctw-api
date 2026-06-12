@@ -18,15 +18,19 @@ public class Materias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_materia;
+
+    @Column(nullable = false)
     private String nome_materia;
 
     @OneToMany(mappedBy = "materia")
     @JsonBackReference
     @JsonIgnore
+    @Column(nullable = false)
     private List<ProfessoresMaterias> profMat;
 
     @OneToMany(mappedBy = "materia")
     @JsonBackReference
     @JsonIgnore
+    @Column(nullable = false)
     private List<AlunosMaterias> alnMat;
 }

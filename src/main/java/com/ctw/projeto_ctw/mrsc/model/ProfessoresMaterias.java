@@ -21,10 +21,12 @@ public class ProfessoresMaterias {
     @ManyToOne
     @JoinColumn(name="id_professor")
     @JsonManagedReference
+    @Column(nullable = false)
     private Professores professor;
 
     @ManyToOne
     @JoinColumn(name="id_materia")
     @JsonManagedReference
+    @Column(nullable = false)
     private Materias materia;
 }

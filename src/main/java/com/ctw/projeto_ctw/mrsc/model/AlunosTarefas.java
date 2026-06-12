@@ -26,10 +26,12 @@ public class AlunosTarefas {
     @ManyToOne
     @JoinColumn(name = "id_aluno")
     @JsonIgnoreProperties("tarefas")
+    @Column(nullable = false)
     private Alunos aluno;
     // --
     @ManyToOne
     @JoinColumn(name = "id_tarefa")
     @JsonIgnoreProperties("tarefas")
+    @Column(nullable = false)
     private Tarefas tarefa;
 }
