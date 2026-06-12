@@ -24,9 +24,8 @@ public class Turmas {
     private String nome_turma;
     // --
     @ManyToOne
-    @JoinColumn(name = "periodos_id_periodo")
+    @JoinColumn(name = "periodos_id_periodo", nullable = false)
     @JsonIgnoreProperties("turmas")
-    @Column(nullable = false)
     private Periodos periodo;
     // --
     @OneToMany(mappedBy = "turma")

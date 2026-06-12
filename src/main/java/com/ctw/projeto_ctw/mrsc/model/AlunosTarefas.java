@@ -24,14 +24,12 @@ public class AlunosTarefas {
     private boolean conclusao = false;
     // --
     @ManyToOne
-    @JoinColumn(name = "id_aluno")
+    @JoinColumn(name = "id_aluno", nullable = false)
     @JsonIgnoreProperties("tarefas")
-    @Column(nullable = false)
     private Alunos aluno;
     // --
     @ManyToOne
-    @JoinColumn(name = "id_tarefa")
+    @JoinColumn(name = "id_tarefa", nullable = false)
     @JsonIgnoreProperties("tarefas")
-    @Column(nullable = false)
     private Tarefas tarefa;
 }

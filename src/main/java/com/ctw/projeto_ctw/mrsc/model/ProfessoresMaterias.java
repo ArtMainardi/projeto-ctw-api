@@ -19,14 +19,12 @@ public class ProfessoresMaterias {
     private Long id_professor_materia;
 
     @ManyToOne
-    @JoinColumn(name="id_professor")
+    @JoinColumn(name="id_professor", nullable = false)
     @JsonManagedReference
-    @Column(nullable = false)
     private Professores professor;
 
     @ManyToOne
-    @JoinColumn(name="id_materia")
+    @JoinColumn(name="id_materia", nullable = false)
     @JsonManagedReference
-    @Column(nullable = false)
     private Materias materia;
 }

@@ -19,12 +19,10 @@ public class AlunosMaterias {
     @ManyToOne
     @JoinColumn(name="id_materia", nullable = false)
     @JsonManagedReference
-    @Column(nullable = false)
     private Materias materia;
 
     @ManyToOne
     @JoinColumn(name="id_aluno", nullable = false)
     @JsonManagedReference
-    @Column(nullable = false)
     private Alunos aluno;
 }
