@@ -38,5 +38,5 @@ public class Tarefas {
     // --
     @OneToMany(mappedBy = "tarefa")
     @JsonIgnore
-    List<AlunosTarefas> alunosTarefas;
+    private List<AlunosTarefas> alunosTarefas;
 }

@@ -28,5 +28,7 @@ public class Conteudos {
     @Column(updatable = false, nullable = false)
     private LocalDateTime data_publicacao;
     //--
-    // --> Futura relação com MATERIAS
+    @ManyToOne
+    @JoinColumn(name="id_materia", nullable = false)
+    private Materias materia;
 }

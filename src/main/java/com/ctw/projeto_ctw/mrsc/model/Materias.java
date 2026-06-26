@@ -37,4 +37,9 @@ public class Materias {
     @JsonIgnore
     @Column(nullable = false)
     private List<Tarefas> tarefas;
+
+    @OneToMany(mappedBy = "materia")
+    @JsonIgnore
+    @Column(nullable = false)
+    private List<Conteudos> conteudos;
 }
