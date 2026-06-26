@@ -1,5 +1,6 @@
 package com.ctw.projeto_ctw.mrsc.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,11 +19,11 @@ public class AlunosMaterias {
 
     @ManyToOne
     @JoinColumn(name="id_materia", nullable = false)
-    @JsonManagedReference
+    @JsonIgnoreProperties("materias")
     private Materias materia;
 
     @ManyToOne
     @JoinColumn(name="id_aluno", nullable = false)
-    @JsonManagedReference
+    @JsonIgnoreProperties("alunos")
     private Alunos aluno;
 }

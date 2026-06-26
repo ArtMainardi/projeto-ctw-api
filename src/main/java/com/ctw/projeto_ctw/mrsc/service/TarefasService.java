@@ -29,6 +29,7 @@ public class TarefasService {
         newTarefa.setTitulo_tarefa(modifiedTarefa.getTitulo_tarefa());
         newTarefa.setTexto_tarefa(modifiedTarefa.getTexto_tarefa());
         newTarefa.setData_entrega_tarefa(modifiedTarefa.getData_entrega_tarefa());
+        newTarefa.setMateria(modifiedTarefa.getMateria());
         return repository.save(newTarefa);
     }
 

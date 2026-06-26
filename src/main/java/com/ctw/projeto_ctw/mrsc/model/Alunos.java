@@ -57,7 +57,6 @@ public class Alunos {
     List<AlunosTarefas> alunosTarefas;
 
     @OneToMany(mappedBy = "aluno")
-    @JsonBackReference
     @JsonIgnore
     private List<AlunosMaterias> alnMat;
 

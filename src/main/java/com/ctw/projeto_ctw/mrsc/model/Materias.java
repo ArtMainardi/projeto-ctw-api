@@ -2,6 +2,7 @@ package com.ctw.projeto_ctw.mrsc.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,14 +24,17 @@ public class Materias {
     private String nome_materia;
 
     @OneToMany(mappedBy = "materia")
-    @JsonBackReference
     @JsonIgnore
     @Column(nullable = false)
     private List<ProfessoresMaterias> profMat;
 
     @OneToMany(mappedBy = "materia")
-    @JsonBackReference
     @JsonIgnore
     @Column(nullable = false)
     private List<AlunosMaterias> alnMat;
+
+    @OneToMany(mappedBy = "materia")
+    @JsonIgnore
+    @Column(nullable = false)
+    private List<Tarefas> tarefas;
 }

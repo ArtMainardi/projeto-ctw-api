@@ -1,6 +1,7 @@
 package com.ctw.projeto_ctw.mrsc.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,7 +32,9 @@ public class Tarefas {
     // --
     private LocalDateTime data_entrega_tarefa;
     // --
-    // Futuramente implementar FK com a tabela MATERIAS
+    @ManyToOne
+    @JoinColumn(name="id_materia", nullable = false)
+    private Materias materia;
     // --
     @OneToMany(mappedBy = "tarefa")
     @JsonIgnore
