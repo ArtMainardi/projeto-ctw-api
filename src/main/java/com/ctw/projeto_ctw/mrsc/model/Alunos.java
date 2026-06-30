@@ -52,10 +52,12 @@ public class Alunos {
     @Column(updatable = false, nullable = false)
     private LocalDateTime data_criacao_aluno;
     // --
+    private int pontuacao_aluno = 0;
+    // --
     @OneToMany(mappedBy = "aluno")
     @JsonIgnore
     List<AlunosTarefas> alunosTarefas;
-
+    // --
     @OneToMany(mappedBy = "aluno")
     @JsonIgnore
     private List<AlunosMaterias> alnMat;
