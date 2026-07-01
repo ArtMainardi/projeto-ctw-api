@@ -39,4 +39,9 @@ public class AlunosController {
         service.deletar(id);
         return ResponseEntity.noContent().build();
     }
+    // --
+    @PutMapping("/pontuacao/{id}/{valor}")
+    public ResponseEntity<Alunos> implementarPontuacao(@PathVariable Long id, @PathVariable int valor){
+        return ResponseEntity.ok(service.implementarPontuacao(id, valor));
+    }
 }
