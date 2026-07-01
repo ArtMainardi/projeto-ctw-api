@@ -35,20 +35,12 @@ public class AlunosService {
         newAluno.setFoto_perfil_aluno(modifiedAluno.getFoto_perfil_aluno());
         newAluno.setEmail_aluno(modifiedAluno.getEmail_aluno());
         newAluno.setSenha_aluno(modifiedAluno.getSenha_aluno());
+        newAluno.setPontuacao(modifiedAluno.getPontuacao());
         return repository.save(newAluno);
     }
 
     // Deletar:
     public void deletar(Long id){
         repository.deleteById(id);
-    }
-
-    // Adicionar pontuação:
-    public void addPontuacao(Long id, int valor){
-        Alunos aluno = buscar(id);
-        aluno.setPontuacao_aluno(aluno.getPontuacao_aluno() + valor);
-        if(aluno.getPontuacao_aluno() < 0){
-            aluno.setPontuacao_aluno(0);
-        }
     }
 }
