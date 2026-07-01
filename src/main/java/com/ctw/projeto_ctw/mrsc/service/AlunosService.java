@@ -43,4 +43,13 @@ public class AlunosService {
     public void deletar(Long id){
         repository.deleteById(id);
     }
+
+    // Implementar pontuação:
+    public void implementarPontuacao(Long id, int valor){
+        Alunos aluno = buscar(id);
+        aluno.setPontuacao_aluno(aluno.getPontuacao_aluno() + valor);
+        if(aluno.getPontuacao_aluno() < 0){
+            aluno.setPontuacao_aluno(0);
+        }
+    }
 }
