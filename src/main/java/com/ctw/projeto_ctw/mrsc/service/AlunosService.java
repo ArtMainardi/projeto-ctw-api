@@ -45,11 +45,12 @@ public class AlunosService {
     }
 
     // Implementar pontuação:
-    public void implementarPontuacao(Long id, int valor){
+    public Alunos implementarPontuacao(Long id, int valor){
         Alunos aluno = buscar(id);
         aluno.setPontuacao_aluno(aluno.getPontuacao_aluno() + valor);
         if(aluno.getPontuacao_aluno() < 0){
             aluno.setPontuacao_aluno(0);
         }
+        return repository.save(aluno);
     }
 }

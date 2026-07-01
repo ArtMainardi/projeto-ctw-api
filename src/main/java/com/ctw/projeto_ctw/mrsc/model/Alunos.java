@@ -48,8 +48,6 @@ public class Alunos {
     @Column(length = 200, nullable = false)
     private String senha_aluno;
     // --
-    private int pontuacao = 0;
-    // --
     @CreationTimestamp
     @Column(updatable = false, nullable = false)
     private LocalDateTime data_criacao_aluno;

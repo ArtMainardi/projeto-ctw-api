@@ -41,8 +41,7 @@ public class AlunosController {
     }
     // --
     @PutMapping("/pontuacao/{id}/{valor}")
-    public ResponseEntity<Void> implementarPontuacao(@PathVariable Long id, @PathVariable int valor){
-        service.implementarPontuacao(id, valor);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<Alunos> implementarPontuacao(@PathVariable Long id, @PathVariable int valor){
+        return ResponseEntity.ok(service.implementarPontuacao(id, valor));
     }
 }
